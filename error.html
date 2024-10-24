@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>killsec.lol</title>
+    <meta name="theme-color" content="#313338" />
+    <meta property="og:title" content="" />
+    <meta property="og:image" content="saved/Old/assets/files/icon.png" />
+    <meta property="og:description" content="private bio-link web" />
+    <link rel="stylesheet" href="saved/Old/assets/styles/main.css" />
+    <script src="saved/Old/assets/scripts/script.js"></script>
+
+    <style>
+        @font-face {
+            font-family: "mc";
+            src: url("Regular.otf") format("opentype");
+        }
+
+        div {
+            font-family: "mc";
+        }
+    </style>
+    <script>
+        function detectDevTools() {
+            const threshold = 160;
+            let devToolsWidth = window.outerWidth - window.innerWidth > threshold;
+            let devToolsHeight = window.outerHeight - window.innerHeight > threshold;
+
+            if (devToolsWidth || devToolsHeight) {
+                window.location.href = 'error';
+            }
+        }
+
+        detectDevTools();
+
+        setInterval(detectDevTools, 500);
+    </script>
+</head>
+
+<body class="unselectable">
+    <div class="container">
+        <div id="enter-portal" onclick="enterPortal()">click to enter</div>
+        <div id="body-div" class="hidden">
+            <div class="image-container">
+                <img class="img-responsive hanginggirl animated infinite swing nodrag" draggable="false"
+                    src="saved/Old/assets/files/girl.png" />
+            </div>
+            <div class="typing-container">
+                <div id="typing" class="typing-text"></div>
+                <div id="cursor" class="cursor"></div>
+                <div class="text-container">
+                    <div>
+                        <p style="color: transparent;">‎</p>
+                        <a href="killsec/">
+                            <button style="border-radius: 40px; color: rgb(255, 255, 255);" class="btn-link"
+                                type="button">killsec</button>
+                        </a>
+                        <a href="https://discord.gg/ytx8uCKYGz">
+                            <button style="border-radius: 40px; color: rgb(255, 255, 255);" class="btn-link"
+                                type="button">Server</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="clock"></div>
+    <script src="https://unpkg.com/magic-snowflakes/dist/snowflakes.min.js"></script>
+
+    <script>
+        function enterPortal() {
+            const audio = new Audio("song.mp3");
+            const typing = document.getElementById("typing");
+            const cursor = document.getElementById("cursor");
+            const texts = ["killsec.lol", "/term", "kash"];
+            let textIndex = 0;
+            let charIndex = 0;
+            audio.addEventListener(
+                "ended",
+                function () {
+                    this.currentTime = 0;
+                    this.play();
+                },
+                false
+            );
+            audio.play();
+            document.getElementById("enter-portal").style.display = "none";
+            document.getElementById("body-div").classList.remove("hidden");
+            function type() {
+                if (charIndex < texts[textIndex].length) {
+                    typing.textContent = texts[textIndex].slice(0, charIndex + 1);
+                    charIndex++;
+                } else {
+                    charIndex = 0;
+                    textIndex++;
+                    if (textIndex >= texts.length) {
+                        textIndex = 0;
+                    }
+                }
+            }
+            setInterval(type, 115);
+        }
+        function cord() {
+            window.location.href = "https://discord.gg/term";
+        }
+        document.getElementById("typing").addEventListener("click", cord);
+
+        document.onkeydown = (e) =>
+            e.keyCode === 123 ||
+                (e.ctrlKey && e.shiftKey && (e.keyCode === 73 || e.keyCode === 74)) ||
+                (e.ctrlKey && e.keyCode === 85)
+                ? (alert("403 forbidden."), false)
+                : undefined;
+
+        function updateClock() {
+            const now = new Date();
+            const options = {
+                hour12: true,
+                hour: 'numeric',
+                minute: '2-digit',
+                second: '2-digit'
+            };
+            const formattedTime = now.toLocaleTimeString('en-US', options);
+            document.getElementById('clock').textContent = formattedTime;
+        }
+
+        setInterval(updateClock, 1000);
+
+        function createBloodSparks() {
+            const numSparks = Math.floor(Math.random() * 5) + 1;
+            for (let i = 0; i < numSparks; i++) {
+                const bloodSpark = document.createElement('div');
+                bloodSpark.classList.add('blood-spark');
+                bloodSpark.style.left = `${Math.random() * window.innerWidth}px`;
+                document.body.appendChild(bloodSpark);
+
+                setTimeout(() => {
+                    bloodSpark.remove();
+                }, 6000);
+            }
+        }
+
+        setInterval(createBloodSparks, 1000);
+
+        document.addEventListener("contextmenu", (event) => {
+            event.preventDefault();
+        });
+
+        var sf = new Snowflakes({
+            color: "white"
+        });
+    </script>
+
+    <div class="blood-spark" style="left: 1003.77px;"></div>
+    <div class="blood-spark" style="left: 1861.42px;"></div>
+    <div class="blood-spark" style="left: 1011.6px;"></div>
+    <div class="blood-spark" style="left: 1878.73px;"></div>
+    <div class="blood-spark" style="left: 601.029px;"></div>
+</body>
+
+</html>

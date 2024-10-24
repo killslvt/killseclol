@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error 404</title>
+    <link rel="shortcut icon" href="/favicon2.gif">
+    <link rel="stylesheet" href="refs/css/styles.css">
+    <script src="refs/js/blockall.js" defer></script>
+</head>
+
+<style type="text/css">
+    body {
+        background: url('../../../refs/img/bg_47.gif') center;
+        cursor: url("refs/img/cursor.gif"), auto;
+    }
+</style>
+
+<style type="text/css">
+    a {
+        cursor: url("refs/img/cursor2.gif"), default;
+    }
+</style>
+
+<body topmargin="0" bottommargin="100" leftmargin="0" rightmargin="0" background="refs/img/bg104.gif">
+
+    <div class="error-container">
+        <font size="3" color="#c1b492"><mark style="background-color:d2738a;"><br></font>
+        <a href="http://killsec.lol"><img border="0" src="refs/img/Shake_5.gif" alt="LoveLain" width="560"
+                height="500"></a>
+        <div id="errorflash" class="error-text">ERROR</div>
+    </div>
+
+    <script>
+        function getIP(callback) {
+            fetch('https://api.ipify.org?format=json')
+                .then(response => response.json())
+                .then(data => callback(null, data.ip))
+                .catch(err => callback(err, null));
+        }
+
+        function updateErrorFlash(ip) {
+            const errorFlashDiv = document.getElementById('errorflash');
+            if (errorFlashDiv) {
+                errorFlashDiv.innerHTML = `ERROR<br>Your IPv4 Address: ${ip}`;
+            }
+        }
+
+        // Call getIP function and update errorflash div
+        getIP((err, ip) => {
+            if (err) {
+                console.error('Error fetching IP:', err);
+            } else {
+                updateErrorFlash(ip);
+            }
+        });
+    </script>
+
+</body>
+
+</html>

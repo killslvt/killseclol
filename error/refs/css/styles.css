@@ -1,0 +1,47 @@
+body {
+    
+    background-repeat: repeat;
+    background-attachment: fixed;
+}
+
+.error-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+/* Additional styles for existing content */
+.error-container img {
+    position: absolute;
+    position: fixed;
+    bottom: -1px;
+    left: 75%;
+    width: 560px;
+    height: 500px;
+    margin-left: -280px;
+}
+
+.error-text {
+    font-size: 50px;
+    color: #ffffff;
+    text-align: center;
+    margin-top: 20px; /* Adjust as needed for positioning */
+}
+
+#errorflash {
+    margin: 0;
+    animation: swayAndFade 1.50s infinite alternate;
+}
+
+@keyframes swayAndFade {
+    from {
+        color: #613540; 
+        transform: rotate(-5deg);
+    }
+    to {
+        color: #be687e;
+        transform: rotate(5deg);
+    }
+}

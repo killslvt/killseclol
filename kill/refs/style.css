@@ -1,0 +1,193 @@
+:root {
+    --main-text: white;
+    --alt-text: red;
+    --available: springgreen;
+    --unavailable: red;
+    --background: #000000;
+}
+
+* {
+    cursor: url(https://cur.cursors-4u.net/others/oth-8/oth702.cur), auto !important;
+}
+
+@font-face {
+    font-family: "Perfect DOS VGA 437";
+    src: url('VGA.ttf');
+}
+
+@font-face {
+    font-family: "Zpix (最像素)";
+    src: url('zpix.ttf');
+}
+
+body {
+    overflow: hidden;
+    background: var(--background);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: "Perfect DOS VGA 437", "Zpix (最像素)", sans-serif;
+    color: var(--main-text);
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.invisible-box {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    text-align: center;
+    padding-bottom: 60px; /* Ensure space above the footer */
+}
+
+.title-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2.5rem;
+}
+
+.title {
+    font-size: 2rem;
+    margin-bottom: 200px;
+    animation: flicker 0.15s infinite;
+    overflow: hidden;
+}
+
+@keyframes flicker {
+    0% { opacity: 0.27861; }
+    5% { opacity: 0.34769; }
+    10% { opacity: 0.23604; }
+    15% { opacity: 0.90626; }
+    20% { opacity: 0.18128; }
+    25% { opacity: 0.83891; }
+    30% { opacity: 0.65583; }
+    35% { opacity: 0.67807; }
+    40% { opacity: 0.26559; }
+    45% { opacity: 0.84693; }
+    50% { opacity: 0.96019; }
+    55% { opacity: 0.08594; }
+    60% { opacity: 0.20313; }
+    65% { opacity: 0.71988; }
+    70% { opacity: 0.53455; }
+    75% { opacity: 0.37288; }
+    80% { opacity: 0.71428; }
+    85% { opacity: 0.70419; }
+    90% { opacity: 0.7003; }
+    95% { opacity: 0.36108; }
+    100% { opacity: 0.24387; }
+}
+
+.cursor {
+    font-size: 2rem;
+    color: var(--alt-text);
+    display: inline-block;
+    animation: blink 1s step-end infinite;
+    margin-bottom: 178px;
+    margin-right: 5px;
+}
+
+@keyframes blink {
+    from, to { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+.index p {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.members-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.members-list li {
+    margin: 5px 0;
+}
+
+.members-list a {
+    color: var(--main-text);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.members-list a:hover {
+    color: var(--alt-text);
+    animation: flicker 0.15s infinite;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--background);
+    color: var(--main-text);
+    text-align: center;
+    padding: 10px 0;
+    font-family: "Perfect DOS VGA 437", "Zpix (最像素)", sans-serif;
+    font-size: 0.9rem;
+    border-top: 1px solid var(--alt-text);
+}
+
+.footer a {
+    color: var(--main-text);
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+.footer a:hover {
+    color: var(--alt-text);
+}
+
+.footer-content {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes bloodSpark {
+    0% {
+        transform: translateY(100%) translateX(0);
+        opacity: 0.7;
+    }
+
+    100% {
+        transform: translateY(-50vh) translateX(50vw);
+        opacity: 0.7;
+    }
+}
+
+.blood-spark {
+    position: fixed;
+    width: 6px;
+    height: 6px;
+    background-color: red;
+    margin-bottom: -900px;
+    border-radius: 50%;
+    animation: bloodSpark 4s linear forwards, fadeOut 1s ease-in-out 2s forwards;
+    opacity: 0.7;
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 0.7;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
