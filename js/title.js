@@ -9,7 +9,9 @@ let index = 0;
 
 function updateTitle() {
     document.title = titles[index];
-    index = (index + 1) % titles.length;
+    index = (index + 1) % titles.length; 
 }
+
+document.addEventListener("selectstart", (e) => e.preventDefault());
 
 setInterval(updateTitle, 200);
