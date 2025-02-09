@@ -1,8 +1,7 @@
 body {
-    background-color: #613540;
-    color: #613540;
-    background: url('../refs/img/bg205.gif') center;
+    background: url('bg.gif') center;
     font-family: "Perfect DOS VGA 437", "Zpix (最像素)", sans-serif;
+    color: red;
     margin: 0;
     padding: 0;
 }
@@ -18,8 +17,9 @@ body {
 }
 
 header {
-    background-color: #0e0e0e00;
-    padding: 0.5px 0;
+    background-color: rgba(14, 14, 14, 0.5);
+    padding: 10px 0;
+    box-shadow: 0px 4px 8px rgba(255, 0, 0, 0.5);
 }
 
 .header-container {
@@ -27,69 +27,73 @@ header {
     justify-content: space-between;
     align-items: center;
     max-width: 1200px;
-    max-height: 500px;
     margin: 0 auto;
-    padding: 0 1em;
+    padding: 0 20px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 24px;
 }
 
 nav a {
-    margin: 0 10px;
-    color: #613540;
+    margin: 0 15px;
+    color: red;
+    font-size: 16px;
     text-decoration: none;
+    transition: color 0.3s;
 }
 
 nav a:hover {
+    color: gray;
     text-decoration: underline;
 }
 
 .logo-section {
     text-align: center;
-    padding: 2em 0;
+    padding: 3em 0;
 }
 
 .logo-section img {
-    max-width: 150px;
+    max-width: 120px;
 }
 
-.mirrors a {
-    color: #00f; /* Change the color to your preference */
-    text-decoration: none;
-    margin: 0 5px;
-}
-
-.mirrors a:hover {
-    text-decoration: underline;
-    color: #ff0; /* Change the hover color to your preference */
+.mirrors h5 {
+    font-size: 14px;
+    color: #bbb;
 }
 
 #all-sources {
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 20px auto;
     padding: 1em;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 8px;
+    border: 2px solid red;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 #all-sources h2 {
     text-align: center;
+    font-size: 22px;
+    color: white;
 }
 
 #all-sources table {
     width: 100%;
     border-collapse: collapse;
-    margin: 1em 0;
+    margin-top: 15px;
 }
 
 #all-sources th, #all-sources td {
-    border: 1px solid #0e0e0e;
-    padding: 0.5em;
+    border: 1px solid transparent;
+    padding: 10px;
     text-align: left;
 }
 
 #all-sources th {
-    background-color: #0e0e0e;
-}
-
-#all-sources tr:nth-child(even) {
-    background-color: #0e0e0e;
+    background-color: black;
+    color: white;
 }
 
 .download-button {
@@ -104,11 +108,12 @@ nav a:hover {
 }
 
 .download-button:hover {
-    background-color: #000000a9;
+    background-color: #ff0000a9;
 }
 
 footer {
     text-align: center;
-    padding: 1em 0;
-    background-color: #1a1a1a;
+    padding: 15px;
+    background-color: rgba(14, 14, 14, 0.8);
+    font-size: 14px;
 }
